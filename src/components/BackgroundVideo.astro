@@ -1,0 +1,85 @@
+---
+// BackgroundVideo.astro - Optimized background video component
+export interface Props {
+  src: string;
+  autoplay?: boolean;
+  muted?: boolean;
+  loop?: boolean;
+  playbackRate?: number;
+  class?: string;
+  id?: string;
+}
+
+const {
+  src,
+  autoplay = true,
+  muted = true,
+  loop = true,
+  playbackRate = 1,
+  class: className = "absolute inset-0 w-full h-full object-cover z-0",
+  id
+} = Astro.props;
+---
+
+<video
+  {autoplay}
+  {muted}
+  {loop}
+  preload="none"
+  class={className}
+  {id}
+  data-playback-rate={playbackRate}
+>
+  <source src={src} type="video/mp4">
+</video>
+
+<script>
+  // Lazy loading and playback rate for background videos
+  function initBackgroundVideos() {
+    const videos = document.querySelectorAll('video[autoplay][muted]') as NodeListOf<HTMLVideoElement>;
+    videos.forEach(video => {
+      video.addEventListener('error', (e) => {
+        console.log('Video load error:', video.src, e);
+      });
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            if (!video.hasAttribute('data-loaded')) {
+              console.log('Video intersecting, loading:', video.src);
+              video.load();
+              video.setAttribute('data-loaded', 'true');
+            }
+            if (video.paused) {
+              video.play().then(() => {
+                console.log('Video playing:', video.src);
+                // Set playback rate if specified
+                const rate = video.getAttribute('data-playback-rate');
+                if (rate) {
+                  video.playbackRate = parseFloat(rate);
+                  console.log('Playback rate set to:', rate);
+                }
+              }).catch((error) => {
+                console.log('Autoplay failed for video:', video.src, error);
+                // Autoplay failed, user interaction required
+              });
+            }
+          }
+          // Removed pause to prevent aborting play requests
+        });
+      }, { threshold: 0.1 });
+      observer.observe(video);
+    });
+  }
+
+  // Initialize on load
+  document.addEventListener('DOMContentLoaded', initBackgroundVideos);
+  // Also initialize on Astro page transitions
+  document.addEventListener('astro:page-load', initBackgroundVideos);
+</script>
+
+<style>
+  video {
+    /* Ensure videos don't interfere with layout */
+    pointer-events: none;
+  }
+</style>

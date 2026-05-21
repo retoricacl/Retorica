@@ -1,0 +1,38 @@
+/* src/assets/styles/typography.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* Título principal (para el Hero) */
+  .text-display {
+    @apply text-5xl font-bold leading-tight tracking-tighter text-white md:text-6xl;
+  }
+
+  /* Título de sección (para Features, Steps, etc.) */
+  .text-heading-1 {
+    @apply text-4xl font-bold leading-tight tracking-tighter text-[#AE8A60];
+    md: text-5xl;
+  }
+
+  /* Título secundario (si lo necesitas) */
+  .text-heading-2 {
+    @apply text-3xl font-bold text-white md:text-4xl;
+  }
+
+  /* Título de Item (para las características individuales) */
+  .text-heading-3 {
+    @apply text-xl font-semibold text-[#AE8A60]; /* Cambiado de text-white a text-[#AE8A60] */
+  }
+
+  /* Subtítulos (Color de acento) */
+  .text-subtitle {
+    @apply text-xl text-[#AE8A60] md:text-2xl;
+  }
+
+  /* Texto de cuerpo o párrafo */
+  .text-body {
+    @apply text-lg text-slate-400;
+  }
+}

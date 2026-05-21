@@ -1,0 +1,1014 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import LogoCarousel from '~/components/LogoCarousel.astro';
+
+import BackgroundImage from '~/components/BackgroundImage.astro';
+
+const metadata = {
+  title: 'Retórica - Events and Marketing',
+  ignoreTitleTemplate: true,
+  description: 'Retórica: Specialists in exclusive events, festivals, parties, graduations and high-impact marketing. Create unforgettable experiences with us.',
+  keywords: ['events', 'marketing', 'festivals', 'parties', 'graduations', 'activations', 'influencers', 'own spaces', 'Retórica', 'exclusive events', 'digital marketing', 'Influencer Marketing'],
+};
+---
+
+<Layout metadata={metadata}>
+  <section id="inicio" class="relative min-h-screen md:min-h-screen overflow-hidden bg-black">
+    <!-- Background Image -->
+    <BackgroundImage src="/images/mall.jpg" />
+    <!-- Darkening layer -->
+    <div class="absolute inset-0 bg-black/70 z-10"></div>
+
+    <!-- Hero Content -->
+    <div class="relative z-20 flex items-center justify-center min-h-screen pt-16 md:pt-16">
+      <div class="text-center px-4 sm:px-6 intersect intersect-once">
+        <h1 class="text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-white/70 text-4xl md:text-5xl lg:text-[3.8rem] font-extrabold tracking-tight mb-6 md:mb-8 drop-shadow-lg font-heading">
+          Retórica Company<span class="text-xl md:text-2xl lg:text-3xl align-top ml-1 font-light opacity-80 text-white">®</span>
+        </h1>
+        <div class="mb-8 md:mb-12 drop-shadow-md">
+          <p class="text-white/90 text-xl md:text-2xl font-light mb-2 tracking-wide">
+            Entertainment, marketing and experiences
+          </p>
+          <p class="text-yellow-400 text-[10px] md:text-xs font-semibold uppercase tracking-[0.25em]">
+            FESTIVALS · PARTIES · GRADUATIONS · MARKETING · VENUES
+          </p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-6 justify-center z-30">
+           <a
+             href="#unidades-carousel"
+             class="group relative inline-flex items-center justify-center px-6 py-3 md:px-8 md:py-4 bg-black border border-white/30 text-white font-bold text-base md:text-lg rounded-full overflow-hidden transition-all duration-500 hover:border-yellow-400 hover:shadow-[0_0_35px_rgba(234,179,8,0.35)] shadow-lg"
+           >
+             <span class="absolute inset-0 bg-yellow-400 scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-500 ease-out z-0"></span>
+             <span class="relative z-10 flex items-center gap-2 group-hover:text-black transition-colors duration-500">
+               <span>Explore Our Areas</span>
+               <svg class="w-5 h-5 transform translate-x-0 group-hover:translate-x-1.5 transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+               </svg>
+             </span>
+           </a>
+           <a
+             href="#contacto"
+             class="group relative inline-flex items-center justify-center px-6 py-3 md:px-8 md:py-4 bg-black border border-white/30 text-white font-bold text-base md:text-lg rounded-full overflow-hidden transition-all duration-500 hover:border-yellow-400 hover:shadow-[0_0_35px_rgba(234,179,8,0.35)] shadow-lg"
+           >
+             <span class="absolute inset-0 bg-yellow-400 scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-500 ease-out z-0"></span>
+             <span class="relative z-10 flex items-center gap-2 group-hover:text-black transition-colors duration-500">
+               <span>Quote Your Project</span>
+               <svg class="w-5 h-5 transform translate-x-0 group-hover:translate-x-1.5 transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+               </svg>
+             </span>
+           </a>
+         </div>
+      </div>
+    </div>
+    <!-- Scroll indicator -->
+    <a href="#universo" class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex flex-col items-center justify-center gap-2 text-white/50 hover:text-yellow-400 transition-all duration-300 cursor-pointer animate-fade-in" aria-label="Scroll down">
+      <span class="text-[9px] uppercase tracking-[0.25em] font-light">Scroll</span>
+      <div class="w-[20px] h-[34px] border border-white/20 hover:border-yellow-400 rounded-full flex justify-center p-1 transition-all duration-300">
+        <div class="w-1.5 h-1.5 bg-yellow-400 rounded-full animate-bounce"></div>
+      </div>
+    </a>
+  </section>
+  <!-- Manifesto Section -->
+  <section id="universo" class="relative bg-black flex items-center justify-center py-12 md:py-16 overflow-hidden">
+    <!-- Minimalist Background: Subtle Gradient -->
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/5 via-transparent to-transparent z-10"></div>
+    <div class="relative z-20 max-w-4xl mx-auto px-4 sm:px-6 text-center pb-8 md:pb-12">
+      <h2 class="text-xs uppercase tracking-[0.35em] text-yellow-400 font-semibold mb-8">Our Essence</h2>
+      <p class="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-gray-200 text-2xl md:text-3xl lg:text-[2.25rem] font-extralight tracking-tight leading-relaxed mb-6">
+        We create an entertainment and marketing ecosystem designed to connect brands, people, and audiences.
+      </p>
+      <p class="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-gray-200 text-2xl md:text-3xl lg:text-[2.25rem] font-extralight tracking-tight leading-relaxed">
+        Through five specialized units, we transform ideas into high-impact experiences, combining strategy, creative direction, and flawless execution.
+      </p>
+      <div class="mt-8">
+        <a href="#contacto" class="group relative inline-flex items-center justify-center px-8 py-4 bg-black border border-white/30 text-white font-bold text-lg rounded-full overflow-hidden transition-all duration-500 hover:border-yellow-400 hover:shadow-[0_0_35px_rgba(234,179,8,0.35)] shadow-lg">
+          <span class="absolute inset-0 bg-yellow-400 scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-500 ease-out z-0"></span>
+          <span class="relative z-10 flex items-center gap-2 group-hover:text-black transition-colors duration-500">
+            <span>Quote with Retórica</span>
+            <svg class="w-5 h-5 transform translate-x-0 group-hover:translate-x-1.5 transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Separator -->
+  <div class="w-full h-px bg-gradient-to-r from-transparent via-gray-600 to-transparent"></div>
+
+  <!-- Gallery Sections -->
+  <section id="festivales" class="relative h-screen bg-cover bg-center">
+    <div class="slider-container absolute inset-0">
+      <div class="slide fest-slide1 active"></div>
+      <div class="slide fest-slide2"></div>
+      <div class="slide fest-slide3"></div>
+      <div class="slide fest-slide4"></div>
+      <div class="slide fest-slide5"></div>
+      <div class="slide fest-slide6"></div>
+    </div>
+    <div class="absolute inset-0 bg-black/60"></div>
+    <!-- Navigation buttons -->
+    <button class="fest-prev absolute left-4 top-1/2 transform -translate-y-1/2 z-20 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition">&larr;</button>
+    <button class="fest-next absolute right-4 top-1/2 transform -translate-y-1/2 z-20 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition">&rarr;</button>
+    <style>
+      .slider-container {
+        position: absolute;
+        inset: 0;
+      }
+      .slide {
+        position: absolute;
+        inset: 0;
+        background-size: cover;
+        background-position: center center;
+        opacity: 0;
+        transform: scale(1);
+        transition: opacity 0.8s ease-in-out, transform 8s ease-out;
+      }
+      @media (min-width: 768px) {
+        .slide {
+          background-position: center center;
+        }
+      }
+      .slide.active {
+        opacity: 1;
+        transform: scale(1.05);
+      }
+      .fest-slide1 {
+        background-image: url('/images/fest1.jpg');
+      }
+      .fest-slide2 {
+        background-image: url('/images/fest2.jpg');
+      }
+      .fest-slide3 {
+        background-image: url('/images/fest3.jpg');
+      }
+      .fest-slide4 {
+        background-image: url('/images/fest4.jpg');
+      }
+      .fest-slide5 {
+        background-image: url('/images/fest5.jpg');
+      }
+      .fest-slide6 {
+        background-image: url('/images/fest6.jpg');
+      }
+    </style>
+    <div class="relative z-10 flex items-center justify-center h-full px-4 sm:px-6 intersect intersect-once">
+      <div class="text-left max-w-2xl">
+        <h2 id="fest-title" class="text-4xl md:text-5xl font-extralight tracking-tight text-white mb-4 cursor-pointer hover:text-yellow-400 transition-colors duration-300">Retórica <span class="font-extrabold text-yellow-400 tracking-wide">FEST</span></h2>
+        <p class="text-base md:text-lg text-white/90 font-light tracking-wide leading-relaxed">Festivals connecting music, brands, and audiences</p>
+      </div>
+      <div class="absolute bottom-8 right-8 z-30">
+        <a href="#" id="fest-link" class="group relative inline-flex items-center justify-center px-6 py-2.5 bg-black/40 backdrop-blur-md border border-white/20 text-white text-sm font-semibold rounded-full overflow-hidden transition-all duration-500 hover:border-yellow-400 hover:shadow-[0_0_30px_rgba(234,179,8,0.3)] shadow-lg">
+          <span class="absolute inset-0 bg-yellow-400 scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-500 ease-out z-0"></span>
+          <span class="relative z-10 flex items-center gap-2 group-hover:text-black transition-colors duration-500">
+            <span>View Details</span>
+            <svg class="w-4 h-4 transform translate-x-0 group-hover:translate-x-1.5 transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal for Fest -->
+  <div id="fest-modal" class="fixed inset-0 bg-black/60 backdrop-blur-md hidden z-50 transition-all duration-300">
+    <div class="bg-black border border-white p-6 md:p-8 rounded-2xl max-w-2xl w-full mx-4 max-h-[90vh] overflow-y-auto custom-scrollbar" data-lenis-prevent>
+      <button id="close-fest" class="float-right bg-black border border-white text-white font-bold rounded-full px-3 py-1 hover:bg-yellow-400 hover:text-black hover:border-yellow-400 transition text-2xl" aria-label="Close modal">&times;</button>
+      <h3 class="text-3xl font-extralight tracking-tight text-white mb-6 font-heading">Retórica <span class="font-extrabold text-yellow-400 tracking-wide">FEST</span></h3>
+      <p class="text-gray-200 mb-6">Large-scale festivals connecting music, brands, and audiences.</p>
+      <div class="space-y-6">
+        <div>
+          <h4 class="text-2xl font-bold text-white mb-4">Produced Festivals</h4>
+          <ul class="text-gray-200 space-y-2">
+            <li>• Alcántara Festival</li>
+            <li>• Off Paes Festival</li>
+            <li>• On Campus Festival</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-2xl font-bold text-white mb-4">What we develop</h4>
+          <ul class="text-gray-200 space-y-2">
+            <li>• High-complexity stage design and scenic assembly</li>
+            <li>• Musical curation and talent booking</li>
+            <li>• Strategic integration and brand experiences</li>
+            <li>• Mass logistics and high-security protocols</li>
+            <li>• Mass outreach campaigns and digital positioning</li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-gray-200">We design high-impact festivals where music and brands unite to create unforgettable collective milestones.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Retórica Social Section -->
+  <section id="party" class="relative h-screen bg-cover bg-center">
+    <div class="slider-container absolute inset-0">
+      <div class="slide party-slide1 active"></div>
+      <div class="slide party-slide2"></div>
+      <div class="slide party-slide9"></div>
+      <div class="slide party-slide3"></div>
+      <div class="slide party-slide4"></div>
+      <div class="slide party-slide5"></div>
+      <div class="slide party-slide6"></div>
+      <div class="slide party-slide7"></div>
+      <div class="slide party-slide8"></div>
+    </div>
+    <div class="absolute inset-0 bg-black/60"></div>
+    <!-- Navigation buttons -->
+    <button class="party-prev absolute left-4 top-1/2 transform -translate-y-1/2 z-20 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition">&larr;</button>
+    <button class="party-next absolute right-4 top-1/2 transform -translate-y-1/2 z-20 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition">&rarr;</button>
+    <style>
+      .slider-container {
+        position: absolute;
+        inset: 0;
+      }
+      .slide {
+        position: absolute;
+        inset: 0;
+        background-size: cover;
+        background-position: center center;
+        opacity: 0;
+        transform: scale(1);
+        transition: opacity 0.8s ease-in-out, transform 8s ease-out;
+      }
+      @media (min-width: 768px) {
+        .slide {
+          background-position: center center;
+        }
+      }
+      .slide.active {
+        opacity: 1;
+        transform: scale(1.05);
+      }
+      .party-slide1 {
+        background-image: url('/images/party2.jpg');
+        background-position: 50% 25% !important;
+      }
+      .party-slide2 {
+        background-image: url('/images/casa bali.JPG?v=2');
+        background-position: 50% 35% !important;
+      }
+      .party-slide3 {
+        background-image: url('/images/party4.jpg');
+        background-position: 50% 20% !important;
+      }
+      .party-slide4 {
+        background-image: url('/images/party5.jpg');
+        background-position: 50% 20% !important;
+      }
+      .party-slide5 {
+        background-image: url('/images/party3.jpg');
+        background-position: 50% 25% !important;
+      }
+      .party-slide6 {
+        background-image: url('/images/monster.jpg');
+        background-position: 50% 30% !important;
+      }
+      .party-slide7 {
+        background-image: url('/images/coca-cola.jpg');
+        background-position: 50% 50% !important;
+      }
+      .party-slide8 {
+        background-image: url('/images/off paes.jpg');
+      }
+      .party-slide9 {
+        background-image: url('/images/prom3.jpg');
+        background-position: 50% 30% !important;
+      }
+    </style>
+    <div class="relative z-10 flex items-center justify-center h-full px-4 sm:px-6 intersect intersect-once">
+      <div class="text-left max-w-2xl">
+        <h2 id="party-title" class="text-4xl md:text-5xl font-extralight tracking-tight text-white mb-4 cursor-pointer hover:text-yellow-400 transition-colors duration-300">Retórica <span class="font-extrabold text-yellow-400 tracking-wide">SOCIAL</span></h2>
+        <p class="text-base md:text-lg text-white/90 font-light tracking-wide leading-relaxed">Parties segmented by age, with concepts designed for each audience</p>
+      </div>
+      <div class="absolute bottom-8 right-8 z-30">
+        <a href="#" id="party-link" class="group relative inline-flex items-center justify-center px-6 py-2.5 bg-black/40 backdrop-blur-md border border-white/20 text-white text-sm font-semibold rounded-full overflow-hidden transition-all duration-500 hover:border-yellow-400 hover:shadow-[0_0_30px_rgba(234,179,8,0.3)] shadow-lg">
+          <span class="absolute inset-0 bg-yellow-400 scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-500 ease-out z-0"></span>
+          <span class="relative z-10 flex items-center gap-2 group-hover:text-black transition-colors duration-500">
+            <span>View Details</span>
+            <svg class="w-4 h-4 transform translate-x-0 group-hover:translate-x-1.5 transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal for Party -->
+  <div id="party-modal" class="fixed inset-0 bg-black/60 backdrop-blur-md hidden z-50 transition-all duration-300">
+    <div class="bg-black border border-white p-6 md:p-8 rounded-2xl max-w-2xl w-full mx-4 max-h-[90vh] overflow-y-auto custom-scrollbar" data-lenis-prevent>
+      <button id="close-party" class="float-right bg-black border border-white text-white font-bold rounded-full px-3 py-1 hover:bg-yellow-400 hover:text-black hover:border-yellow-400 transition text-2xl" aria-label="Close modal">&times;</button>
+      <h3 class="text-3xl font-extralight tracking-tight text-white mb-6 font-heading">Retórica <span class="font-extrabold text-yellow-400 tracking-wide">SOCIAL</span></h3>
+      <p class="text-gray-200 mb-6">Parties and social events segmented by style, age, and audience.</p>
+      <div class="space-y-6">
+        <div>
+          <h4 class="text-2xl font-bold text-white mb-4">Produced Parties</h4>
+          <ul class="text-gray-200 columns-2 sm:columns-3 gap-x-6 gap-y-0.5 text-xs sm:text-sm leading-tight">
+            <li>• Santorini +14</li>
+            <li>• Brava +16</li>
+            <li>• La Reliquia +16</li>
+            <li>• Chao Paes +18</li>
+            <li>• Off Year +18</li>
+            <li>• Club X +19</li>
+            <li>• Paranoia +19</li>
+            <li>• Amalfi +20</li>
+            <li>• A Rienda Suelta +21</li>
+            <li>• Interface +21</li>
+            <li>• Fogo +23</li>
+            <li>• Ananá +23</li>
+            <li>• Bembé +23</li>
+            <li>• La Juerga +23</li>
+            <li>• Street 25 +25</li>
+            <li>• Von Garden +25</li>
+            <li>• Potch +25</li>
+            <li>• Viernes Social +25</li>
+            <li>• Santo Boliche +27</li>
+            <li>• Society +27</li>
+            <li>• Casa Bali +40</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-2xl font-bold text-white mb-4">What we develop</h4>
+          <ul class="text-gray-200 space-y-2">
+            <li>• Themed parties and conceptual productions</li>
+            <li>• Exclusive activations and strategic alliances with brands</li>
+            <li>• Advanced audiovisual production and cutting-edge DJs</li>
+            <li>• Digital access control and strict security schemes</li>
+            <li>• Strategic promotion and targeted digital marketing</li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-gray-200">We create exclusive atmospheres tailored to each generation, redefining high-standard social entertainment.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Retórica PROM Section -->
+  <section id="prom" class="relative h-screen bg-cover bg-center">
+    <div class="slider-container absolute inset-0">
+      <div class="slide prom-slide8 active"></div>
+      <div class="slide prom-slide10"></div>
+      <div class="slide prom-slide2"></div>
+      <div class="slide prom-slide5"></div>
+      <div class="slide prom-slide6"></div>
+      <div class="slide prom-slide7"></div>
+      <div class="slide prom-slide9"></div>
+    </div>
+    <div class="absolute inset-0 bg-black/60"></div>
+    <!-- Navigation buttons -->
+    <button class="prom-prev absolute left-4 top-1/2 transform -translate-y-1/2 z-20 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition">&larr;</button>
+    <button class="prom-next absolute right-4 top-1/2 transform -translate-y-1/2 z-20 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition">&rarr;</button>
+    <style>
+      .slider-container {
+        position: absolute;
+        inset: 0;
+      }
+      .slide {
+        position: absolute;
+        inset: 0;
+        background-size: cover;
+        background-position: center center;
+        opacity: 0;
+        transform: scale(1);
+        transition: opacity 0.8s ease-in-out, transform 8s ease-out;
+      }
+      @media (min-width: 768px) {
+        .slide {
+          background-position: center center;
+        }
+      }
+      .slide.active {
+        opacity: 1;
+        transform: scale(1.05);
+      }
+      .prom-slide10 {
+        background-image: url('/images/prom 10.jpg');
+      }
+      .prom-slide2 {
+        background-image: url('/images/prom 1.jpg');
+      }
+      .prom-slide5 {
+        background-image: url('/images/prom 11.jpg');
+        background-position: 50% 30% !important;
+      }
+      .prom-slide6 {
+        background-image: url('/images/prom 2.jpg');
+        background-position: 50% 20% !important;
+      }
+      .prom-slide7 {
+        background-image: url('/images/prom 3.jpg');
+      }
+      .prom-slide8 {
+        background-image: url('/images/prom 4.jpg');
+      }
+      .prom-slide9 {
+        background-image: url('/images/prom 5.jpg');
+      }
+    </style>
+    <div class="relative z-10 flex items-center justify-center h-full px-4 sm:px-6 intersect intersect-once">
+      <div class="text-left max-w-2xl">
+        <h2 id="prom-title" class="text-4xl md:text-5xl font-extralight tracking-tight text-white mb-4 cursor-pointer hover:text-yellow-400 transition-colors duration-300">Retórica <span class="font-extrabold text-yellow-400 tracking-wide">PROM</span></h2>
+        <p class="text-base md:text-lg text-white/90 font-light tracking-wide leading-relaxed">School graduations with comprehensive production, safety and high standards</p>
+      </div>
+      <div class="absolute bottom-8 right-8 z-30">
+        <a href="#" id="prom-link" class="group relative inline-flex items-center justify-center px-6 py-2.5 bg-black/40 backdrop-blur-md border border-white/20 text-white text-sm font-semibold rounded-full overflow-hidden transition-all duration-500 hover:border-yellow-400 hover:shadow-[0_0_30px_rgba(234,179,8,0.3)] shadow-lg">
+          <span class="absolute inset-0 bg-yellow-400 scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-500 ease-out z-0"></span>
+          <span class="relative z-10 flex items-center gap-2 group-hover:text-black transition-colors duration-500">
+            <span>View Details</span>
+            <svg class="w-4 h-4 transform translate-x-0 group-hover:translate-x-1.5 transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal for PROM -->
+  <div id="prom-modal" class="fixed inset-0 bg-black/60 backdrop-blur-md hidden z-50 transition-all duration-300">
+    <div class="bg-black border border-white p-6 md:p-8 rounded-2xl max-w-2xl w-full mx-4 max-h-[90vh] overflow-y-auto custom-scrollbar" data-lenis-prevent>
+      <button id="close-prom" class="float-right bg-black border border-white text-white font-bold rounded-full px-3 py-1 hover:bg-yellow-400 hover:text-black hover:border-yellow-400 transition text-2xl" aria-label="Close modal">&times;</button>
+      <h3 class="text-3xl font-extralight tracking-tight text-white mb-6 font-heading">Retórica <span class="font-extrabold text-yellow-400 tracking-wide">PROM</span></h3>
+      <p class="text-gray-200 mb-6">Comprehensive production of high-standard senior graduations, focusing on sophistication, safety, and an unforgettable experience.</p>
+      <div class="space-y-6">
+        <div>
+          <h4 class="text-2xl font-bold text-white mb-4">What we develop</h4>
+          <ul class="text-gray-200 space-y-2">
+            <li>• Design and absolute event customization</li>
+            <li>• Comprehensive coordination, styling, and staging</li>
+            <li>• High-end catering, featured DJs, and robotic lighting</li>
+            <li>• Professional photography and aftermovie production</li>
+            <li>• Interactive experiences and brand activations</li>
+            <li>• Strict screening schemes and private security</li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-gray-200">We design memorable and safe graduations, turning the school closure into a maximum-level celebration.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Retórica NODO Section -->
+  <section id="nodo" class="relative h-screen bg-cover bg-center">
+    <div class="slider-container absolute inset-0">
+      <div class="slide nodo-slide1 active"></div>
+      <div class="slide nodo-slide2"></div>
+      <div class="slide nodo-slide3"></div>
+      <div class="slide nodo-slide4"></div>
+      <div class="slide nodo-slide5"></div>
+    </div>
+    <div class="absolute inset-0 bg-black/60"></div>
+    <!-- Navigation buttons -->
+    <button class="nodo-prev absolute left-4 top-1/2 transform -translate-y-1/2 z-20 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition">&larr;</button>
+    <button class="nodo-next absolute right-4 top-1/2 transform -translate-y-1/2 z-20 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition">&rarr;</button>
+    <style>
+      .slider-container {
+        position: absolute;
+        inset: 0;
+      }
+      .slide {
+        position: absolute;
+        inset: 0;
+        background-size: cover;
+        background-position: center center;
+        opacity: 0;
+        transform: scale(1);
+        transition: opacity 0.8s ease-in-out, transform 8s ease-out;
+      }
+      @media (min-width: 768px) {
+        .slide {
+          background-position: center center;
+        }
+      }
+      .slide.active {
+        opacity: 1;
+        transform: scale(1.05);
+      }
+      .nodo-slide1 {
+        background-image: url('/images/nodo 10.png');
+      }
+      .nodo-slide2 {
+        background-image: url('/images/nodo 30.png');
+      }
+      .nodo-slide3 {
+        background-image: url('/images/nodo 11.png');
+      }
+      .nodo-slide4 {
+        background-image: url('/images/nodo 40.png');
+      }
+      .nodo-slide5 {
+        background-image: url('/images/nodo 50.png');
+      }
+    </style>
+    <div class="relative z-10 flex items-center justify-center h-full px-4 sm:px-6 intersect intersect-once">
+      <div class="text-left max-w-2xl">
+        <h2 id="nodo-title" class="text-4xl md:text-5xl font-extralight tracking-tight text-white mb-4 cursor-pointer hover:text-yellow-400 transition-colors duration-300">Retórica <span class="font-extrabold text-yellow-400 tracking-wide">NODO</span></h2>
+        <p class="text-base md:text-lg text-white/90 font-light tracking-wide leading-relaxed">Marketing, PR and influencers for restaurants, nightlife and brand experiences</p>
+      </div>
+      <div class="absolute bottom-8 right-8 z-30">
+        <a href="#" id="nodo-link" class="group relative inline-flex items-center justify-center px-6 py-2.5 bg-black/40 backdrop-blur-md border border-white/20 text-white text-sm font-semibold rounded-full overflow-hidden transition-all duration-500 hover:border-yellow-400 hover:shadow-[0_0_30px_rgba(234,179,8,0.3)] shadow-lg">
+          <span class="absolute inset-0 bg-yellow-400 scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-500 ease-out z-0"></span>
+          <span class="relative z-10 flex items-center gap-2 group-hover:text-black transition-colors duration-500">
+            <span>View Details</span>
+            <svg class="w-4 h-4 transform translate-x-0 group-hover:translate-x-1.5 transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal for NODO -->
+  <div id="nodo-modal" class="fixed inset-0 bg-black/60 backdrop-blur-md hidden z-50 transition-all duration-300">
+    <div class="bg-black border border-white p-6 md:p-8 rounded-2xl max-w-2xl w-full mx-4 max-h-[90vh] overflow-y-auto custom-scrollbar" data-lenis-prevent>
+      <button id="close-nodo" class="float-right bg-black border border-white text-white font-bold rounded-full px-3 py-1 hover:bg-yellow-400 hover:text-black hover:border-yellow-400 transition text-2xl" aria-label="Close modal">&times;</button>
+      <h3 class="text-3xl font-extralight tracking-tight text-white mb-6 font-heading">Retórica <span class="font-extrabold text-yellow-400 tracking-wide">NODO</span></h3>
+      <p class="text-gray-200 mb-6">Marketing, PR and influencers for restaurants, nightlife and brand experiences</p>
+      <div class="space-y-6">
+        <div>
+          <h4 class="text-2xl font-bold text-white mb-4">Brands and clients worked with</h4>
+          <ul class="text-gray-200 space-y-2">
+            <li>• Johnny Rockets</li>
+            <li>• Renaissance Santiago Hotel</li>
+            <li>• The Fry Club</li>
+            <li>• Segreta Pizzería</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-2xl font-bold text-white mb-4">What we develop</h4>
+          <ul class="text-gray-200 space-y-2">
+            <li>• Marketing strategies to position brands and generate reservations, sales, leads, and traffic.</li>
+            <li>• Digital campaigns for social media, WhatsApp, websites, and forms.</li>
+            <li>• Management of influencers, foodies, content creators, and ambassadors.</li>
+            <li>• PR, launches, strategic alliances, and presence in relevant circles.</li>
+            <li>• Premium UGC content production for campaigns and social media.</li>
+            <li>• Comprehensive coordination of briefs, contracts, deliverables, and reports.</li>
+            <li>• Results analysis: reach, engagement, conversion, and return.</li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-gray-200">We sell, position, and connect brands with the right audiences.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Retórica VENUES Section -->
+  <section id="venues" class="relative h-screen bg-cover bg-center">
+    <div class="slider-container absolute inset-0">
+      <div class="slide venues-slide1 active"></div>
+      <div class="slide venues-slide2"></div>
+      <div class="slide venues-slide3"></div>
+      <div class="slide venues-slide4"></div>
+      <div class="slide venues-slide5"></div>
+      <div class="slide venues-slide6"></div>
+    </div>
+    <div class="absolute inset-0 bg-black/60"></div>
+    <!-- Navigation buttons -->
+    <button class="venues-prev absolute left-4 top-1/2 transform -translate-y-1/2 z-20 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition">&larr;</button>
+    <button class="venues-next absolute right-4 top-1/2 transform -translate-y-1/2 z-20 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition">&rarr;</button>
+    <style>
+      .slider-container {
+        position: absolute;
+        inset: 0;
+      }
+      .slide {
+        position: absolute;
+        inset: 0;
+        background-size: cover;
+        background-position: center center;
+        opacity: 0;
+        transform: scale(1);
+        transition: opacity 0.8s ease-in-out, transform 8s ease-out;
+      }
+      @media (min-width: 768px) {
+        .slide {
+          background-position: top center;
+        }
+      }
+      .slide.active {
+        opacity: 1;
+        transform: scale(1.05);
+      }
+      .venues-slide1 {
+        background-image: url('/images/venues 11.JPG');
+      }
+      .venues-slide2 {
+        background-image: url('/images/venues 16.JPG');
+        background-position: 50% 30% !important;
+      }
+      .venues-slide3 {
+        background-image: url('/images/venues 15.JPG?v=2');
+        background-position: 50% 70% !important;
+      }
+      .venues-slide4 {
+        background-image: url('/images/venues 10.JPG');
+        background-position: 50% 15% !important;
+      }
+      .venues-slide5 {
+        background-image: url('/images/venues 12.JPG');
+        background-position: 150% 10% !important;
+      }
+      .venues-slide6 {
+        background-image: url('/images/venues 20.png');
+      }
+    </style>
+    <div class="relative z-10 flex items-center justify-center h-full px-4 sm:px-6 intersect intersect-once">
+      <div class="text-left max-w-2xl">
+        <h2 id="venues-title" class="text-4xl md:text-5xl font-extralight tracking-tight text-white mb-4 cursor-pointer hover:text-yellow-400 transition-colors duration-300">Retórica <span class="font-extrabold text-yellow-400 tracking-wide">VENUES</span></h2>
+        <p class="text-base md:text-lg text-white/90 font-light tracking-wide leading-relaxed">Event centers and venues for parties, private events, and brand activations</p>
+      </div>
+      <div class="absolute bottom-8 right-8 z-30">
+        <a href="#" id="venues-link" class="group relative inline-flex items-center justify-center px-6 py-2.5 bg-black/40 backdrop-blur-md border border-white/20 text-white text-sm font-semibold rounded-full overflow-hidden transition-all duration-500 hover:border-yellow-400 hover:shadow-[0_0_30px_rgba(234,179,8,0.3)] shadow-lg">
+          <span class="absolute inset-0 bg-yellow-400 scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-500 ease-out z-0"></span>
+          <span class="relative z-10 flex items-center gap-2 group-hover:text-black transition-colors duration-500">
+            <span>View Details</span>
+            <svg class="w-4 h-4 transform translate-x-0 group-hover:translate-x-1.5 transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal for VENUES -->
+  <div id="venues-modal" class="fixed inset-0 bg-black/60 backdrop-blur-md hidden z-50 transition-all duration-300">
+    <div class="bg-black border border-white p-6 md:p-8 rounded-2xl max-w-2xl w-full mx-4 max-h-[90vh] overflow-y-auto custom-scrollbar" data-lenis-prevent>
+      <button id="close-venues" class="float-right bg-black border border-white text-white font-bold rounded-full px-3 py-1 hover:bg-yellow-400 hover:text-black hover:border-yellow-400 transition text-2xl" aria-label="Close modal">&times;</button>
+      <h3 class="text-3xl font-extralight tracking-tight text-white mb-6 font-heading">Retórica <span class="font-extrabold text-yellow-400 tracking-wide">VENUES</span></h3>
+      <p class="text-gray-200 mb-6">Event centers and exclusive space management for private celebrations, corporate events, and brand activations.</p>
+      <div class="space-y-6">
+        <div>
+          <h4 class="text-2xl font-bold text-white mb-4">Available spaces</h4>
+          <ul class="text-gray-200 space-y-2">
+            <li>• Event center in Santo Domingo, located 800 meters from Las Brisas</li>
+            <li>• Location management for events, activations and private productions</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-2xl font-bold text-white mb-4">What we develop</h4>
+          <ul class="text-gray-200 space-y-2">
+            <li>• Large parties and social events</li>
+            <li>• Weddings and exclusive private celebrations</li>
+            <li>• High-standard corporate conventions and events</li>
+            <li>• Brand launches and immersive activations</li>
+            <li>• Production of fairs, food festivals, and markets</li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-gray-200">We transform exclusive locations with rigorous execution and high service standards to guarantee your project's success.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <LogoCarousel />
+
+
+
+  <!-- Separator -->
+  <div class="w-full h-px bg-gradient-to-r from-transparent via-gray-600 to-transparent"></div>
+
+  <!-- Contact Section -->
+  <section id="contacto" class="py-20 bg-black">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <h2 class="text-4xl md:text-5xl font-bold text-white text-center mb-4">Let's talk about your next project</h2>
+      <p class="text-gray-400 text-center text-lg md:text-xl mb-12">
+        Tell us what you need and our team will contact you
+      </p>
+      <div class="text-center mb-8">
+        <button id="toggle-form" class="px-6 py-2 border border-white/20 text-gray-400 font-medium rounded-full hover:bg-yellow-400/10 hover:text-yellow-400 hover:border-yellow-400 transition-all duration-300 text-sm uppercase tracking-wider">Close form</button>
+      </div>
+      <div id="contact-form" class="bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-sm shadow-2xl">
+        <form id="contact-form-element" name="contact" class="space-y-6">
+          <div style="display:none;">
+            <input type="text" name="_honey" style="display:none" />
+          </div>
+          <div>
+            <label class="block text-white/80 mb-2 font-semibold">Service of interest</label>
+            <div class="relative">
+              <select name="servicio" required class="w-full p-3 bg-black border border-yellow-400/30 text-white rounded-xl focus:outline-none focus:ring-1 focus:ring-yellow-400 focus:border-yellow-400 focus:shadow-[0_0_15px_rgba(234,179,8,0.25)] appearance-none cursor-pointer transition-all duration-300 hover:border-yellow-400">
+                <option value="" class="bg-black text-white">Select the type of experience you are looking for</option>
+                <option class="bg-black text-white">Festivales</option>
+                <option class="bg-black text-white">Private events</option>
+                <option class="bg-black text-white">School graduations</option>
+                <option class="bg-black text-white">Influencer Marketing</option>
+                <option class="bg-black text-white">Venue Rental · El Galpón Santo Domingo</option>
+                <option class="bg-black text-white">Brand activations</option>
+                <option class="bg-black text-white">Other project</option>
+              </select>
+              <div class="absolute inset-y-0 right-0 flex items-center px-3 pointer-events-none">
+                <svg class="w-5 h-5 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div>
+            <label class="block text-white/80 mb-2 font-semibold">Name</label>
+            <input type="text" name="name" required class="w-full p-3 bg-white/5 border border-white/10 text-white rounded-xl focus:outline-none focus:ring-1 focus:ring-yellow-400 focus:border-yellow-400 focus:shadow-[0_0_15px_rgba(234,179,8,0.25)] hover:border-yellow-400/50 transition-all duration-300" />
+          </div>
+          <div>
+            <label class="block text-white/80 mb-2 font-semibold">Email</label>
+            <input type="email" name="email" id="email" required class="w-full p-3 bg-white/5 border border-white/10 text-white rounded-xl focus:outline-none focus:ring-1 focus:ring-yellow-400 focus:border-yellow-400 focus:shadow-[0_0_15px_rgba(234,179,8,0.25)] hover:border-yellow-400/50 transition-all duration-300" />
+            <span id="email-error" class="text-red-400 text-sm"></span>
+          </div>
+          <div>
+            <label class="block text-white/80 mb-2 font-semibold">Message</label>
+            <textarea name="message" required class="w-full p-3 bg-white/5 border border-white/10 text-white rounded-xl h-32 focus:outline-none focus:ring-1 focus:ring-yellow-400 focus:border-yellow-400 focus:shadow-[0_0_15px_rgba(234,179,8,0.25)] hover:border-yellow-400/50 transition-all duration-300"></textarea>
+          </div>
+          <div id="form-messages" class="text-center"></div>
+          <div class="text-center">
+            <button type="submit" id="submit-btn" class="group relative inline-flex items-center justify-center px-8 py-3.5 bg-black border border-white/30 text-white font-bold rounded-full overflow-hidden transition-all duration-500 hover:border-yellow-400 hover:shadow-[0_0_35px_rgba(234,179,8,0.35)] shadow-lg">
+              <span class="absolute inset-0 bg-yellow-400 scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-500 ease-out z-0"></span>
+              <span class="relative z-10 flex items-center gap-2 group-hover:text-black transition-colors duration-500">
+                <span>Send Request</span>
+                <svg class="w-5 h-5 transform translate-x-0 group-hover:translate-x-1.5 transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                </svg>
+              </span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function openModal(id) {
+       const modal = document.getElementById(id);
+       if (modal) {
+         modal.classList.remove('hidden');
+         modal.classList.add('flex', 'items-center', 'justify-center');
+       }
+     }
+
+     function closeModal(id) {
+       const modal = document.getElementById(id);
+       if (modal) {
+         modal.classList.add('hidden');
+         modal.classList.remove('flex', 'items-center', 'justify-center');
+       }
+     }
+
+     // Event listeners for opening modals (titles and links)
+     document.getElementById('fest-link')?.addEventListener('click', (e) => {
+       e.preventDefault();
+       openModal('fest-modal');
+     });
+     document.getElementById('fest-title')?.addEventListener('click', () => openModal('fest-modal'));
+
+     document.getElementById('party-link')?.addEventListener('click', (e) => {
+       e.preventDefault();
+       openModal('party-modal');
+     });
+     document.getElementById('party-title')?.addEventListener('click', () => openModal('party-modal'));
+
+     document.getElementById('prom-link')?.addEventListener('click', (e) => {
+       e.preventDefault();
+       openModal('prom-modal');
+     });
+     document.getElementById('prom-title')?.addEventListener('click', () => openModal('prom-modal'));
+
+     document.getElementById('nodo-link')?.addEventListener('click', (e) => {
+       e.preventDefault();
+       openModal('nodo-modal');
+     });
+     document.getElementById('nodo-title')?.addEventListener('click', () => openModal('nodo-modal'));
+
+     document.getElementById('venues-link')?.addEventListener('click', (e) => {
+       e.preventDefault();
+       openModal('venues-modal');
+     });
+     document.getElementById('venues-title')?.addEventListener('click', () => openModal('venues-modal'));
+
+     // Event listeners for closing modals
+     document.getElementById('close-fest')?.addEventListener('click', () => closeModal('fest-modal'));
+     document.getElementById('close-party')?.addEventListener('click', () => closeModal('party-modal'));
+     document.getElementById('close-prom')?.addEventListener('click', () => closeModal('prom-modal'));
+     document.getElementById('close-nodo')?.addEventListener('click', () => closeModal('nodo-modal'));
+     document.getElementById('close-venues')?.addEventListener('click', () => closeModal('venues-modal'));
+
+     // Close open modals with "Escape" key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          closeModal('fest-modal');
+          closeModal('party-modal');
+          closeModal('prom-modal');
+          closeModal('nodo-modal');
+          closeModal('venues-modal');
+        }
+      });
+
+
+     // Toggle contact form
+     document.getElementById('toggle-form')?.addEventListener('click', () => {
+       const form = document.getElementById('contact-form');
+       if (form) {
+         form.style.display = form.style.display === 'none' ? 'block' : 'none';
+         const btn = document.getElementById('toggle-form');
+         if (btn) {
+           btn.textContent = form.style.display === 'none' ? 'Show Form' : 'Close form';
+         }
+       }
+     });
+
+     // Toggle logos
+     document.getElementById('toggle-logos')?.addEventListener('click', () => {
+       const container = document.getElementById('logos-container');
+       const btn = document.getElementById('toggle-logos') as HTMLButtonElement;
+       if (container && btn) {
+         container.style.display = container.style.display === 'none' ? 'block' : 'none';
+         btn.textContent = container.style.display === 'none' ? (btn.dataset.show || '') : (btn.dataset.hide || '');
+       }
+     });
+
+     // Slider functionality
+     // Fest slider
+     let festCurrent = 0;
+     const festSlides = document.querySelectorAll('#festivales .slide');
+     function showFestSlide(index) {
+       festSlides.forEach(slide => slide.classList.remove('active'));
+       festSlides[index].classList.add('active');
+       festCurrent = index;
+     }
+     document.querySelector('.fest-prev')?.addEventListener('click', () => {
+       const newIndex = (festCurrent - 1 + festSlides.length) % festSlides.length;
+       showFestSlide(newIndex);
+     });
+     document.querySelector('.fest-next')?.addEventListener('click', () => {
+       const newIndex = (festCurrent + 1) % festSlides.length;
+       showFestSlide(newIndex);
+     });
+
+     // Party slider
+     let partyCurrent = 0;
+     const partySlides = document.querySelectorAll('#party .slide');
+     function showPartySlide(index) {
+       partySlides.forEach(slide => slide.classList.remove('active'));
+       partySlides[index].classList.add('active');
+       partyCurrent = index;
+     }
+     document.querySelector('.party-prev')?.addEventListener('click', () => {
+       const newIndex = (partyCurrent - 1 + partySlides.length) % partySlides.length;
+       showPartySlide(newIndex);
+     });
+     document.querySelector('.party-next')?.addEventListener('click', () => {
+       const newIndex = (partyCurrent + 1) % partySlides.length;
+       showPartySlide(newIndex);
+     });
+
+     // Prom slider
+     let promCurrent = 0;
+     const promSlides = document.querySelectorAll('#prom .slide');
+     function showPromSlide(index) {
+       promSlides.forEach(slide => slide.classList.remove('active'));
+       promSlides[index].classList.add('active');
+       promCurrent = index;
+     }
+     document.querySelector('.prom-prev')?.addEventListener('click', () => {
+       const newIndex = (promCurrent - 1 + promSlides.length) % promSlides.length;
+       showPromSlide(newIndex);
+     });
+     document.querySelector('.prom-next')?.addEventListener('click', () => {
+       const newIndex = (promCurrent + 1) % promSlides.length;
+       showPromSlide(newIndex);
+     });
+
+     // Nodo slider
+     let nodoCurrent = 0;
+     const nodoSlides = document.querySelectorAll('#nodo .slide');
+     function showNodoSlide(index) {
+       nodoSlides.forEach(slide => slide.classList.remove('active'));
+       nodoSlides[index].classList.add('active');
+       nodoCurrent = index;
+     }
+     document.querySelector('.nodo-prev')?.addEventListener('click', () => {
+       const newIndex = (nodoCurrent - 1 + nodoSlides.length) % nodoSlides.length;
+       showNodoSlide(newIndex);
+     });
+     document.querySelector('.nodo-next')?.addEventListener('click', () => {
+       const newIndex = (nodoCurrent + 1) % nodoSlides.length;
+       showNodoSlide(newIndex);
+     });
+
+    // Venues slider
+    let venuesCurrent = 0;
+    const venuesSlides = document.querySelectorAll('#venues .slide');
+    function showVenuesSlide(index) {
+      venuesSlides.forEach(slide => slide.classList.remove('active'));
+      venuesSlides[index].classList.add('active');
+      venuesCurrent = index;
+    }
+    document.querySelector('.venues-prev')?.addEventListener('click', () => {
+      const newIndex = (venuesCurrent - 1 + venuesSlides.length) % venuesSlides.length;
+      showVenuesSlide(newIndex);
+    });
+    document.querySelector('.venues-next')?.addEventListener('click', () => {
+      const newIndex = (venuesCurrent + 1) % venuesSlides.length;
+      showVenuesSlide(newIndex);
+    });
+
+    // Auto-play functionality for all galleries
+    setInterval(() => {
+      const newFestIndex = (festCurrent + 1) % festSlides.length;
+      showFestSlide(newFestIndex);
+    }, 4000); // 4 seconds
+
+    setInterval(() => {
+      const newPartyIndex = (partyCurrent + 1) % partySlides.length;
+      showPartySlide(newPartyIndex);
+    }, 4000);
+
+    setInterval(() => {
+      const newPromIndex = (promCurrent + 1) % promSlides.length;
+      showPromSlide(newPromIndex);
+    }, 4000);
+
+    setInterval(() => {
+      const newNodoIndex = (nodoCurrent + 1) % nodoSlides.length;
+      showNodoSlide(newNodoIndex);
+    }, 4000);
+
+    setInterval(() => {
+      const newVenuesIndex = (venuesCurrent + 1) % venuesSlides.length;
+      showVenuesSlide(newVenuesIndex);
+    }, 4000);
+
+     // Form validation and submission
+     document.getElementById('contact-form-element')?.addEventListener('submit', async function(e) {
+       e.preventDefault();
+       const form = e.target as HTMLFormElement;
+       const formData = new FormData(form);
+       const messagesDiv = document.getElementById('form-messages') as HTMLDivElement;
+       const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
+       const emailError = document.getElementById('email-error') as HTMLSpanElement;
+
+       // Clear previous messages
+       if (messagesDiv) messagesDiv.innerHTML = '';
+       if (emailError) emailError.textContent = '';
+
+       // Validate email
+       const email = (document.getElementById('email') as HTMLInputElement).value;
+       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+       if (!emailRegex.test(email)) {
+         if (emailError) emailError.textContent = 'Please enter a valid email.';
+         return;
+       }
+
+       // Check required fields
+       const requiredFields = ['servicio', 'name', 'email', 'message'];
+       for (const field of requiredFields) {
+         if (!formData.get(field)) {
+           if (messagesDiv) messagesDiv.innerHTML = '<p class="text-red-500">Please complete all required fields.</p>';
+           return;
+         }
+       }
+
+       // Disable button
+       if (submitBtn) {
+         submitBtn.disabled = true;
+         submitBtn.textContent = 'Sending...';
+       }
+
+       try {
+          const formObject = Object.fromEntries(formData);
+          const response = await fetch('/api/sendEmail', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formObject),
+          });
+
+          if (response.ok) {
+            // Success
+            form.style.display = 'none';
+            if (messagesDiv) messagesDiv.innerHTML = '<p class="text-green-500 text-lg font-semibold">Thank you! Your message has been sent. We will get back to you soon.</p>';
+          } else {
+            const errorData = await response.json();
+            throw new Error(errorData.message || 'Submission error');
+          }
+        } catch (error) {
+          console.error('Form submission error:', error);
+          // Error
+          if (messagesDiv) messagesDiv.innerHTML = '<p class="text-red-500">There was an error sending the message. Please try again later.</p>';
+        } finally {
+         // Re-enable button
+         if (submitBtn) {
+           submitBtn.disabled = false;
+           submitBtn.textContent = 'Send';
+         }
+       }
+     });
+   </script>
+</Layout>

@@ -1,0 +1,153 @@
+---
+
+
+const currentLocale = Astro.currentLocale;
+const isEnglish = currentLocale === 'en';
+
+const contactText = isEnglish ? 'CONTACT' : 'CONTACTO';
+
+const navItems = isEnglish ? [
+  { href: '#inicio', text: 'HOME' },
+  { href: '#festivales', text: 'FEST' },
+  { href: '#party', text: 'SOCIAL' },
+  { href: '#prom', text: 'PROM' },
+  { href: '#nodo', text: 'NODO' },
+  { href: '#venues', text: 'VENUES' },
+  { href: '#contacto', text: 'FORM' },
+] : [
+  { href: '#inicio', text: 'INICIO' },
+  { href: '#festivales', text: 'FEST' },
+  { href: '#party', text: 'SOCIAL' },
+  { href: '#prom', text: 'PROM' },
+  { href: '#nodo', text: 'NODO' },
+  { href: '#venues', text: 'VENUES' },
+  { href: '#contacto', text: 'FORMULARIO' },
+];
+---
+
+<header id="header" class="fixed top-0 left-0 w-full z-50 bg-black/90 backdrop-blur-sm border-b border-primary/20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="flex items-center justify-between py-6">
+      <a href="/" class="flex items-center" id="logo-link">
+        <img src="/images/retorica.png" alt="Retórica Logo" class="h-16 w-auto animate-fade-in" />
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center space-x-4">
+        {navItems.map((item, index) => (
+          <>
+            <a href={item.href} class="text-white hover:text-yellow-400 transition-colors duration-200 uppercase">{item.text}</a>
+            {(index === 0 || index === 5) && index < navItems.length - 1 && <span class="text-white/50">|</span>}
+          </>
+        ))}
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-btn" class="md:hidden text-white p-2">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+
+      <!-- Contact Link -->
+      <a href="#contacto" id="contact-btn" class="hidden md:inline-block text-white hover:text-yellow-400 transition-colors duration-300 px-2 py-1 uppercase">{contactText}</a>
+
+      <!-- Language Selector -->
+      <a href={isEnglish ? '/' : '/en'} class="hidden md:inline-block text-white hover:text-yellow-400 transition px-0 text-lg">{isEnglish ? '🇪🇸' : '🇺🇸'}</a>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="md:hidden absolute top-full left-0 w-full bg-black border-t border-primary/20 hidden z-50">
+        <div class="flex flex-col py-4">
+          {navItems.map((item) => (
+            <a href={item.href} class="text-white py-2 px-4 hover:text-yellow-400 transition-colors duration-300">{item.text}</a>
+          ))}
+          <a href="#contacto" class="text-white py-2 px-4 hover:text-yellow-400 transition-colors duration-300">{contactText}</a>
+          <a href={isEnglish ? '/' : '/en'} class="text-white py-2 px-4 hover:text-yellow-400 transition-colors duration-300">{isEnglish ? '🇪🇸' : '🇺🇸'}</a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</header>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // Contact button - smooth scroll
+  const contactBtn = document.getElementById('contact-btn') as HTMLAnchorElement | null;
+  if (contactBtn) {
+    contactBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const contactSection = document.getElementById('contacto');
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  }
+
+  // Mobile contact link - scroll to footer
+  const mobileContactLink = document.querySelector('#mobile-menu a[href="#contacto"]');
+  if (mobileContactLink) {
+    mobileContactLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      const contactSection = document.getElementById('contacto');
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+      }
+      closeMobileMenu();
+    });
+  }
+
+  // Mobile menu toggle
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn') as HTMLButtonElement | null;
+  const mobileMenu = document.getElementById('mobile-menu') as HTMLDivElement | null;
+  if (mobileMenuBtn && mobileMenu) {
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  }
+
+  // Close mobile menu on link click
+  const mobileMenuLinks = document.querySelectorAll('#mobile-menu a');
+  mobileMenuLinks.forEach(link => {
+    link.addEventListener('click', closeMobileMenu);
+  });
+
+  // Logo click — scroll to hero section
+  const logoLink = document.getElementById('logo-link') as HTMLAnchorElement | null;
+  if (logoLink) {
+    logoLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      const heroSection = document.getElementById('inicio');
+      if (heroSection) {
+        heroSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  }
+});
+
+function closeMobileMenu() {
+  const mobileMenu = document.getElementById('mobile-menu') as HTMLDivElement | null;
+  if (mobileMenu) {
+    mobileMenu.classList.add('hidden');
+  }
+}
+</script>
+
+<style>
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 1.5s ease-out;
+  }
+</style>

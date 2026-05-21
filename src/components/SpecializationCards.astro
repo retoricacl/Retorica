@@ -1,0 +1,145 @@
+---
+import Image from '~/components/common/Image.astro';
+
+const { locale } = Astro.props;
+const isEnglish = locale === 'en';
+
+const specializations = [
+  { logo: '/images/alcantara.jpg' },
+  { logo: '/images/aldea.jpg' },
+  { logo: '/images/altokaii.jpg' },
+  { logo: '/images/amalfi.jpg' },
+  { logo: '/images/anana.jpg' },
+  { logo: '/images/bembe.jpg' },
+  { logo: '/images/brava.jpg' },
+  { logo: '/images/casabali.jpg' },
+  { logo: '/images/interface.jpg' },
+  { logo: '/images/lajuerga.jpg' },
+  { logo: '/images/larienda.jpg' },
+  { logo: '/images/mandala.jpg' },
+  { logo: '/images/oasis.jpg' },
+  { logo: '/images/offpaes.jpg' },
+  { logo: '/images/paranoia.jpg' },
+  { logo: '/images/potch.jpg' },
+  { logo: '/images/ranchomai.jpg' },
+  { logo: '/images/reliquia.jpg' },
+  { logo: '/images/santorini.jpg' },
+  { logo: '/images/taboo.jpg' },
+  { logo: '/images/viersocial.jpg' },
+  { logo: '/images/vongarden.jpg' }
+];
+
+const texts = isEnglish ? {
+  title: 'Our Parties, Our Identity',
+  subtitle: 'Each of our brands represents a different way to live the Retórica® experience. Different ages, same values: energy, exclusivity and community.',
+  hideClients: 'Hide Brands',
+  showClients: 'Show Brands'
+} : {
+  title: 'Nuestras Fiestas, Nuestra Identidad',
+  subtitle: 'Cada una de nuestras marcas representa una forma distinta de vivir la experiencia Retórica®. Distintas edades, mismos valores: energía, exclusividad y comunidad.',
+  hideClients: 'Ocultar Marcas',
+  showClients: 'Mostrar Marcas'
+};
+---
+
+<section class="pt-20 pb-32 bg-black intersect intersect-once">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6">
+     <h2 class="text-4xl md:text-5xl font-bold text-center text-white mb-4">{texts.title}</h2>
+     <p class="text-center text-gray-300 text-lg md:text-xl mb-12">{texts.subtitle}</p>
+     <div class="text-center mb-8">
+       <button id="toggle-logos" class="px-6 py-2 bg-black border border-white text-white font-semibold rounded-full hover:bg-white hover:text-black transition" data-show={texts.showClients} data-hide={texts.hideClients}>{texts.showClients}</button>
+     </div>
+    <div id="logos-container" class="logo-container max-w-6xl mx-auto" style="display: none;">
+      <!-- Mobile Grid -->
+      <div class="grid grid-cols-3 gap-4 md:hidden">
+        {specializations.map((spec) => (
+          <div class="flex justify-center">
+            <div class="circular-frame hover:scale-110 transition-transform duration-300">
+              <Image
+                src={spec.logo}
+                alt="Logo"
+                width={120}
+                height={120}
+                class="w-full h-full object-cover rounded-full"
+              />
+            </div>
+          </div>
+        ))}
+      </div>
+      <!-- Desktop Scroll -->
+      <div class="hidden md:block overflow-hidden py-4">
+        <div class="logo-track flex animate-scroll">
+          {specializations.map((spec) => (
+            <div class="mx-8 flex-shrink-0 hover:scale-110 transition-transform duration-300">
+              <div class="circular-frame">
+                <Image
+                  src={spec.logo}
+                  alt="Logo"
+                  width={180}
+                  height={180}
+                  class="w-full h-full object-cover rounded-full"
+                />
+              </div>
+            </div>
+          ))}
+          <!-- Duplicate for seamless loop -->
+          {specializations.map((spec) => (
+            <div class="mx-8 flex-shrink-0 hover:scale-110 transition-transform duration-300">
+              <div class="circular-frame">
+                <Image
+                  src={spec.logo}
+                  alt="Logo"
+                  width={180}
+                  height={180}
+                  class="w-full h-full object-cover rounded-full"
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<style>
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-scroll {
+    animation: scroll 40s linear infinite;
+  }
+
+  .circular-frame {
+    border: 2px solid white;
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px white, 0 6px 12px rgba(0, 0, 0, 0.6);
+    width: 120px;
+    height: 120px;
+    overflow: hidden;
+    background-color: black;
+  }
+
+  @media (min-width: 768px) {
+    .circular-frame {
+      width: 180px;
+      height: 180px;
+    }
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    -webkit-overflow-scrolling: touch; /* iOS momentum scrolling */
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari and Opera */
+  }
+</style>

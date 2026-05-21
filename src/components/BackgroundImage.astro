@@ -1,0 +1,27 @@
+---
+// BackgroundImage.astro - Optimized background image component
+export interface Props {
+  src: string;
+  alt?: string;
+  class?: string;
+  style?: string;
+}
+
+const {
+  src,
+  alt = "",
+  class: className = "absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat z-0",
+  style: inlineStyle = ""
+} = Astro.props;
+
+// Generate optimized image URL if using Astro's image optimization
+// For now, use the src directly as background-image
+const backgroundStyle = `background-image: url('${src}'); ${inlineStyle}`;
+---
+
+<div
+  class={className}
+  style={backgroundStyle}
+  role="img"
+  aria-label={alt}
+></div>

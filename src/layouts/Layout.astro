@@ -1,0 +1,199 @@
+---
+import '~/assets/styles/tailwind.css';
+
+import { I18N } from 'astrowind:config';
+
+import CommonMeta from '~/components/common/CommonMeta.astro';
+import Favicons from '~/components/Favicons.astro';
+import CustomStyles from '~/components/CustomStyles.astro';
+// import ApplyColorMode from '~/components/common/ApplyColorMode.astro'; // Lo dejamos comentado
+import Metadata from '~/components/common/Metadata.astro';
+import SiteVerification from '~/components/common/SiteVerification.astro';
+import Analytics from '~/components/common/Analytics.astro';
+import BasicScripts from '~/components/common/BasicScripts.astro';
+
+import { ClientRouter } from 'astro:transitions';
+
+import type { MetaData as MetaDataType } from '~/types';
+
+export interface Props {
+  metadata?: MetaDataType;
+}
+
+const { metadata = {} } = Astro.props;
+const { language, textDirection } = I18N;
+---
+
+<!doctype html>
+<html lang={language} dir={textDirection} class="2xl:text-[20px]">
+  <head>
+    <CommonMeta />
+    <Favicons />
+    <CustomStyles />
+    {/* <ApplyColorMode /> */}
+    <Metadata {...metadata} />
+    <SiteVerification />
+    <Analytics />
+    <ClientRouter fallback="swap" />
+    <style is:global>
+      /* Lenis Smooth Scroll Base Styles */
+      html.lenis, html.lenis body {
+        height: auto;
+      }
+      .lenis-smooth {
+        scroll-behavior: auto !important;
+      }
+      .lenis-smooth [data-lenis-prevent] {
+        overscroll-behavior: contain;
+      }
+      .lenis-stopped {
+        overflow: hidden;
+      }
+      .lenis-scrolling iframe {
+        pointer-events: none;
+      }
+
+      /* Hide default cursor on desktop for custom elite cursor experience */
+      @media (min-width: 768px) {
+        body, a, button, select, input, textarea, [role="button"], h2.cursor-pointer {
+          cursor: none !important;
+        }
+      }
+
+      /* Thin elegant amber scrollbar for modals */
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 6px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 9px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: rgba(234, 179, 8, 0.4); /* Amber brand gold translucent */
+        border-radius: 9px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background: rgba(234, 179, 8, 0.8);
+      }
+    </style>
+  </head>
+  <body class="antialiased text-page bg-page tracking-tight scroll-smooth">
+    <!-- Architectural Luxury Gridlines -->
+    <div class="fixed inset-0 pointer-events-none z-0 flex justify-between max-w-7xl mx-auto px-4 sm:px-6 opacity-[0.02] border-l border-r border-white/5">
+      <div class="w-px h-full bg-white"></div>
+      <div class="w-px h-full bg-white hidden sm:block"></div>
+      <div class="w-px h-full bg-white hidden md:block"></div>
+      <div class="w-px h-full bg-white hidden lg:block"></div>
+    </div>
+
+    <!-- Cinematic Magnetic Cursor -->
+    <div id="custom-cursor" class="pointer-events-none fixed top-0 left-0 w-2.5 h-2.5 bg-yellow-400 rounded-full z-[9999] -translate-x-1/2 -translate-y-1/2 transition-transform duration-100 ease-out hidden md:block mix-blend-difference"></div>
+    <div id="custom-cursor-ring" class="pointer-events-none fixed top-0 left-0 w-8 h-8 border border-yellow-400 rounded-full z-[9998] -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ease-out hidden md:block"></div>
+
+    <slot />
+    <BasicScripts />
+
+    <!-- <script src="//code.tidio.co/778le8yt1onvopogbc5xeu0hkcjq2ur6.js" async></script> -->
+
+    <!-- Dynamic Velvet Scroll & Magnetic Cursor Engine -->
+    <script is:inline src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
+    <script is:inline>
+      document.addEventListener('DOMContentLoaded', () => {
+        // 1. Initialize Lenis Smooth Scroll
+        const lenis = new Lenis({
+          duration: 1.2,
+          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+          direction: 'vertical',
+          gestureDirection: 'vertical',
+          smooth: true,
+          mouseMultiplier: 1,
+          smoothTouch: false,
+          touchMultiplier: 2,
+          infinite: false,
+        });
+
+        function raf(time) {
+          lenis.raf(time);
+          requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+
+        // Smooth scroll override on all anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            const target = document.querySelector(targetId);
+            if (target) {
+              lenis.scrollTo(target, {
+                offset: 0,
+                duration: 1.5,
+                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+              });
+            }
+          });
+        });
+
+        // 2. Cinematic Magnetic Cursor Tracking
+        const cursor = document.getElementById('custom-cursor');
+        const ring = document.getElementById('custom-cursor-ring');
+        if (!cursor || !ring) return;
+
+        let mouseX = -100;
+        let mouseY = -100;
+        let ringX = -100;
+        let ringY = -100;
+
+        document.addEventListener('mousemove', (e) => {
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+          cursor.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
+        });
+
+        // Outer ring smooth lagging (physics simulation)
+        const tick = () => {
+          ringX += (mouseX - ringX) * 0.15;
+          ringY += (mouseY - ringY) * 0.15;
+          ring.style.transform = `translate3d(${ringX}px, ${ringY}px, 0) translate(-50%, -50%)`;
+          requestAnimationFrame(tick);
+        };
+        tick();
+
+        // Hover expand and magnetic capture handlers
+        const handleMouseEnter = () => {
+          ring.style.width = '56px';
+          ring.style.height = '56px';
+          ring.style.backgroundColor = 'rgba(234, 179, 8, 0.1)';
+          ring.style.borderColor = '#eab308';
+          cursor.style.transform += ' scale(1.5)';
+        };
+
+        const handleMouseLeave = () => {
+          ring.style.width = '32px';
+          ring.style.height = '32px';
+          ring.style.backgroundColor = 'transparent';
+          ring.style.borderColor = '#eab308';
+          cursor.style.transform = cursor.style.transform.replace(' scale(1.5)', '');
+        };
+
+        const updateInteractiveElements = () => {
+          const interactives = document.querySelectorAll('a, button, select, input, textarea, [role="button"], h2.cursor-pointer');
+          interactives.forEach(el => {
+            el.removeEventListener('mouseenter', handleMouseEnter);
+            el.removeEventListener('mouseleave', handleMouseLeave);
+            el.addEventListener('mouseenter', handleMouseEnter);
+            el.addEventListener('mouseleave', handleMouseLeave);
+          });
+        };
+
+        updateInteractiveElements();
+
+        // MutatorObserver to ensure it keeps working with dynamic modals and overlays
+        const observer = new MutationObserver(updateInteractiveElements);
+        observer.observe(document.body, { childList: true, subtree: true });
+      });
+    </script>
+  </body>
+</html>

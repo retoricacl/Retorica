@@ -1,0 +1,71 @@
+---
+import { Icon } from 'astro-icon/components';
+
+
+const currentLocale = Astro.currentLocale;
+const isEnglish = currentLocale === 'en';
+
+const footerText = isEnglish ? {
+  description: 'Entertainment, marketing and experiences.',
+  location: 'Santiago · Chile',
+  contact: 'Contact',
+  developedBy: 'Developed by AIRConsulting.'
+} : {
+  description: 'Entretenimiento, marketing y experiencias.',
+  location: 'Santiago · Chile',
+  contact: 'Contacto',
+  developedBy: 'Desarrollado por AIRConsulting.'
+};
+
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-black border-t border-white/10 pt-16 pb-8 text-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
+    <!-- Brand -->
+    <div class="intersect intersect-once">
+      <h3 class="font-bold text-2xl mb-4 tracking-tight">Retórica Company<span class="text-sm align-top ml-1 opacity-70 font-light">®</span></h3>
+      <p class="text-gray-400 max-w-sm mb-4 leading-relaxed">
+        {footerText.description}
+      </p>
+      <p class="text-gray-500 text-sm">
+        {footerText.location}
+      </p>
+    </div>
+
+    <!-- Contact -->
+    <div class="intersect intersect-once">
+      <h3 class="font-semibold text-lg mb-4 text-white/90">{footerText.contact}</h3>
+      <div class="space-y-3 text-gray-400">
+        <p>
+          <a href="mailto:cristobal@retorica.cl" class="hover:text-yellow-400 transition-colors duration-300 flex items-center">
+             cristobal@retorica.cl
+          </a>
+        </p>
+
+        <div class="flex items-center pt-1">
+           <a href="https://www.instagram.com/retoricacl" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-2 hover:text-yellow-400 transition-colors duration-300 group">
+             <Icon name="tabler:brand-instagram" class="w-6 h-6 text-gray-500 group-hover:text-yellow-400 transition-colors" />
+             <span class="font-medium">@retoricacl</span>
+           </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Copyright & Credits -->
+  <div class="border-t border-white/5 pt-8 mt-8 text-center px-4">
+    <div class="flex flex-col items-center space-y-2">
+      <p class="text-[10px] text-gray-300 font-light tracking-[0.2em] uppercase">
+        © {year} Retórica®
+      </p>
+      <p class="text-[9px] text-gray-400 font-light hover:text-yellow-400 transition-colors">
+        <a href="https://www.facebook.com/airconsulting.cl" target="_blank" rel="noopener noreferrer">
+          {footerText.developedBy}
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>

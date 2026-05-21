@@ -1,0 +1,46 @@
+---
+import { Icon } from 'astro-icon/components';
+
+export interface Props {
+  iconClass?: string;
+}
+
+const { iconClass = 'w-6 h-6' } = Astro.props;
+
+// Script que alterna el modo oscuro y guarda la preferencia en localStorage
+const script = `
+  const root = document.documentElement;
+  const current = localStorage.getItem('theme');
+
+  // Aplica el tema guardado en localStorage al cargar la página
+  if (current === 'dark' || (!current && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    root.classList.add('dark');
+  } else {
+    root.classList.remove('dark');
+  }
+
+  // Toggle de tema
+  window.toggleTheme = () => {
+    if (root.classList.contains('dark')) {
+      root.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    } else {
+      root.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    }
+  };
+`;
+---
+
+<button
+  type="button"
+  class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition"
+  aria-label="Toggle theme"
+  onclick="window.toggleTheme()"
+>
+  <!-- Icono cambia según el tema -->
+  <Icon name="tabler:sun" class:list={[iconClass, 'hidden dark:inline']} />
+  <Icon name="tabler:moon" class:list={[iconClass, 'inline dark:hidden']} />
+</button>
+
+<script is:inline set:html={script} />

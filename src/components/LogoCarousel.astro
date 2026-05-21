@@ -1,0 +1,98 @@
+---
+import Image from '~/components/common/Image.astro';
+
+const currentLocale = Astro.currentLocale;
+const isEnglish = currentLocale === 'en';
+
+const areas = [
+  { image: '/images/5.png', name: 'Retórica FEST', slug: 'festivales' },
+  { image: '/images/1.png', name: 'Retórica SOCIAL', slug: 'party' },
+  { image: '/images/2.png', name: 'Retórica PROM', slug: 'prom' },
+  { image: '/images/3.png', name: 'Retórica NODO', slug: 'nodo' },
+  { image: '/images/4.png', name: 'Retórica VENUES', slug: 'venues' },
+];
+
+const carouselTexts = isEnglish ? {
+  titlePart1: 'Retórica',
+  titlePart2: 'Universe',
+  subtitle: 'Business units'
+} : {
+  titlePart1: 'Universo',
+  titlePart2: 'Retórica',
+  subtitle: 'Unidades de negocio'
+};
+---
+
+<section id="unidades-carousel" class="py-20 md:py-28 bg-black">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6">
+     <h2 class="text-4xl md:text-5xl font-extralight tracking-tight text-center text-white mb-2 font-heading">
+       {carouselTexts.titlePart1} <span class="font-extrabold text-yellow-400 tracking-wide">{carouselTexts.titlePart2}</span>
+     </h2>
+     <p class="text-lg md:text-xl text-center text-gray-400 mb-12">{carouselTexts.subtitle}</p>
+    <div class="logo-container max-w-6xl mx-auto intersect intersect-once">
+     <!-- Fixed Grid for all devices -->
+     <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-8 justify-items-center">
+       {areas.map((area) => (
+         <a href={`#${area.slug}`} class="logo-card flex flex-col items-center group transition-all duration-300">
+           <div class={`circular-frame ${area.slug} mb-6 transition-all duration-500`}>
+             <Image
+               src={area.image}
+               alt={area.name}
+               width={180}
+               height={180}
+               class="w-full h-full object-cover rounded-full"
+             />
+           </div>
+           <h3 class="text-white/60 group-hover:text-white text-sm font-semibold text-center transition-colors duration-300">{area.name}</h3>
+         </a>
+       ))}
+     </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .circular-frame {
+    border: 2px solid rgba(255, 255, 255, 0.12);
+    border-radius: 50%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    width: 75px;
+    height: 75px;
+    overflow: hidden;
+    background-color: black;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .logo-card:hover .circular-frame {
+    transform: scale(1.08);
+  }
+
+  /* Individual premium glow transitions on hover */
+  .logo-card:hover .circular-frame.festivales {
+    box-shadow: 0 0 35px rgba(168, 85, 247, 0.45), 0 0 0 1px rgba(168, 85, 247, 0.2);
+    border-color: #a855f7;
+  }
+  .logo-card:hover .circular-frame.party {
+    box-shadow: 0 0 35px rgba(255, 255, 255, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.2);
+    border-color: #ffffff;
+  }
+  .logo-card:hover .circular-frame.prom {
+    box-shadow: 0 0 35px rgba(234, 179, 8, 0.45), 0 0 0 1px rgba(234, 179, 8, 0.2);
+    border-color: #eab308;
+  }
+  .logo-card:hover .circular-frame.nodo {
+    box-shadow: 0 0 35px rgba(239, 68, 68, 0.45), 0 0 0 1px rgba(239, 68, 68, 0.2);
+    border-color: #ef4444;
+  }
+  .logo-card:hover .circular-frame.venues {
+    box-shadow: 0 0 35px rgba(156, 163, 175, 0.35), 0 0 0 1px rgba(156, 163, 175, 0.2);
+    border-color: #9ca3af;
+  }
+
+  @media (min-width: 768px) {
+    .circular-frame {
+      width: 120px;
+      height: 120px;
+    }
+  }
+</style>
