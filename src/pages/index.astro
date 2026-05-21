@@ -15,7 +15,7 @@ const metadata = {
 <Layout metadata={metadata}>
   <section id="inicio" class="relative min-h-screen md:min-h-screen overflow-hidden bg-black">
     <!-- Imagen de fondo estática -->
-    <BackgroundImage src="/images/mall.jpg" />
+    <BackgroundImage src="/images/mall.jpg" class="absolute inset-0 w-full h-full bg-contain md:bg-cover bg-center bg-no-repeat z-0" />
     <!-- Capa de oscurecimiento -->
     <div class="absolute inset-0 bg-black/70 z-10"></div>
 
@@ -599,6 +599,28 @@ const metadata = {
       </div>
     </div>
   </div>
+
+  <style>
+    @media (max-width: 767px) {
+      #festivales,
+      #party,
+      #prom,
+      #nodo,
+      #venues {
+        overflow: hidden;
+      }
+
+      .slide {
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+      }
+
+      .slide.active {
+        transform: none;
+      }
+    }
+  </style>
 
   <LogoCarousel />
 
