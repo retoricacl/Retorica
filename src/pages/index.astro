@@ -126,17 +126,6 @@ const metadata = {
         transform: scale(1);
         transition: opacity 0.8s ease-in-out, transform 8s ease-out;
       }
-      @media (max-width: 767px) {
-        .slide {
-          background-size: cover;
-          background-position: center 30%;
-        }
-      }
-      @media (min-width: 768px) {
-        .slide {
-          background-position: center center;
-        }
-      }
       .slide.active {
         opacity: 1;
         transform: scale(1.05);
@@ -228,68 +217,50 @@ const metadata = {
     <button class="party-prev absolute left-4 top-1/2 transform -translate-y-1/2 z-20 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition">&larr;</button>
     <button class="party-next absolute right-4 top-1/2 transform -translate-y-1/2 z-20 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition">&rarr;</button>
     <style>
-      .slider-container {
-        position: absolute;
-        inset: 0;
-      }
-      .slide {
-        position: absolute;
-        inset: 0;
-        background-size: cover;
-        background-position: center center;
-        opacity: 0;
-        transform: scale(1);
-        transition: opacity 0.8s ease-in-out, transform 8s ease-out;
-      }
-      @media (max-width: 767px) {
-        .slide {
-          background-size: cover;
-          background-position: center 30%;
-        }
-      }
-      @media (min-width: 768px) {
-        .slide {
-          background-position: center center;
-        }
-      }
-      .slide.active {
-        opacity: 1;
-        transform: scale(1.05);
-      }
       .party-slide1 {
         background-image: url('/images/party2.jpg');
-        background-position: 50% 25% !important;
+        background-position: center center;
       }
       .party-slide2 {
         background-image: url('/images/casa bali.JPG?v=2');
-        background-position: 50% 35% !important;
+        background-position: center center;
       }
       .party-slide3 {
         background-image: url('/images/party4.jpg');
-        background-position: 50% 20% !important;
+        background-position: center center;
       }
       .party-slide4 {
         background-image: url('/images/party5.jpg');
-        background-position: 50% 20% !important;
+        background-position: center center;
       }
       .party-slide5 {
         background-image: url('/images/party3.jpg');
-        background-position: 50% 25% !important;
+        background-position: center center;
       }
       .party-slide6 {
         background-image: url('/images/monster.jpg');
-        background-position: 50% 30% !important;
+        background-position: center center;
       }
       .party-slide7 {
         background-image: url('/images/coca-cola.jpg');
-        background-position: 50% 50% !important;
+        background-position: center center;
       }
       .party-slide8 {
         background-image: url('/images/off paes.jpg');
       }
       .party-slide9 {
         background-image: url('/images/prom3.jpg');
-        background-position: 50% 30% !important;
+        background-position: center center;
+      }
+      @media (min-width: 768px) {
+        .party-slide1 { background-position: 50% 25%; }
+        .party-slide2 { background-position: 50% 35%; }
+        .party-slide3 { background-position: 50% 20%; }
+        .party-slide4 { background-position: 50% 20%; }
+        .party-slide5 { background-position: 50% 25%; }
+        .party-slide6 { background-position: 50% 30%; }
+        .party-slide7 { background-position: 50% 50%; }
+        .party-slide9 { background-position: 50% 30%; }
       }
     </style>
     <div class="relative z-10 flex items-center justify-center h-full px-4 sm:px-6 intersect intersect-once">
@@ -377,34 +348,6 @@ const metadata = {
     <button class="prom-prev absolute left-4 top-1/2 transform -translate-y-1/2 z-20 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition">&larr;</button>
     <button class="prom-next absolute right-4 top-1/2 transform -translate-y-1/2 z-20 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition">&rarr;</button>
     <style>
-      .slider-container {
-        position: absolute;
-        inset: 0;
-      }
-      .slide {
-        position: absolute;
-        inset: 0;
-        background-size: cover;
-        background-position: center center;
-        opacity: 0;
-        transform: scale(1);
-        transition: opacity 0.8s ease-in-out, transform 8s ease-out;
-      }
-      @media (max-width: 767px) {
-        .slide {
-          background-size: cover;
-          background-position: center 30%;
-        }
-      }
-      @media (min-width: 768px) {
-        .slide {
-          background-position: center center;
-        }
-      }
-      .slide.active {
-        opacity: 1;
-        transform: scale(1.05);
-      }
       .prom-slide10 {
         background-image: url('/images/prom 10.jpg');
       }
@@ -413,11 +356,11 @@ const metadata = {
       }
       .prom-slide5 {
         background-image: url('/images/prom 11.jpg');
-        background-position: 50% 30% !important;
+        background-position: center center;
       }
       .prom-slide6 {
         background-image: url('/images/prom 2.jpg');
-        background-position: 50% 20% !important;
+        background-position: center center;
       }
       .prom-slide7 {
         background-image: url('/images/prom 3.jpg');
@@ -427,6 +370,10 @@ const metadata = {
       }
       .prom-slide9 {
         background-image: url('/images/prom 5.jpg');
+      }
+      @media (min-width: 768px) {
+        .prom-slide5 { background-position: 50% 30%; }
+        .prom-slide6 { background-position: 50% 20%; }
       }
     </style>
     <div class="relative z-10 flex items-center justify-center h-full px-4 sm:px-6 intersect intersect-once">
@@ -487,34 +434,6 @@ const metadata = {
     <button class="nodo-prev absolute left-4 top-1/2 transform -translate-y-1/2 z-20 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition">&larr;</button>
     <button class="nodo-next absolute right-4 top-1/2 transform -translate-y-1/2 z-20 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition">&rarr;</button>
     <style>
-      .slider-container {
-        position: absolute;
-        inset: 0;
-      }
-      .slide {
-        position: absolute;
-        inset: 0;
-        background-size: cover;
-        background-position: center center;
-        opacity: 0;
-        transform: scale(1);
-        transition: opacity 0.8s ease-in-out, transform 8s ease-out;
-      }
-      @media (max-width: 767px) {
-        .slide {
-          background-size: cover;
-          background-position: center 30%;
-        }
-      }
-      @media (min-width: 768px) {
-        .slide {
-          background-position: center center;
-        }
-      }
-      .slide.active {
-        opacity: 1;
-        transform: scale(1.05);
-      }
       .nodo-slide1 {
         background-image: url('/images/nodo 10.png');
       }
@@ -600,55 +519,35 @@ const metadata = {
     <button class="venues-prev absolute left-4 top-1/2 transform -translate-y-1/2 z-20 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition">&larr;</button>
     <button class="venues-next absolute right-4 top-1/2 transform -translate-y-1/2 z-20 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition">&rarr;</button>
     <style>
-      .slider-container {
-        position: absolute;
-        inset: 0;
-      }
-      .slide {
-        position: absolute;
-        inset: 0;
-        background-size: cover;
-        background-position: center center;
-        opacity: 0;
-        transform: scale(1);
-        transition: opacity 0.8s ease-in-out, transform 8s ease-out;
-      }
-      @media (max-width: 767px) {
-        .slide {
-          background-size: cover;
-          background-position: center 30%;
-        }
-      }
-      @media (min-width: 768px) {
-        .slide {
-          background-position: top center;
-        }
-      }
-      .slide.active {
-        opacity: 1;
-        transform: scale(1.05);
-      }
       .venues-slide1 {
         background-image: url('/images/venues 11.JPG');
       }
       .venues-slide2 {
         background-image: url('/images/venues 16.JPG');
-        background-position: 50% 30% !important;
+        background-position: center center;
       }
       .venues-slide3 {
         background-image: url('/images/venues 15.JPG?v=2');
-        background-position: 50% 70% !important;
+        background-position: center center;
       }
       .venues-slide4 {
         background-image: url('/images/venues 10.JPG');
-        background-position: 50% 15% !important;
+        background-position: center center;
       }
       .venues-slide5 {
         background-image: url('/images/venues 12.JPG');
-        background-position: 150% 10% !important;
+        background-position: center center;
       }
       .venues-slide6 {
         background-image: url('/images/venues 20.png');
+      }
+      @media (min-width: 768px) {
+        .venues-slide1 { background-position: top center; }
+        .venues-slide2 { background-position: 50% 30%; }
+        .venues-slide3 { background-position: 50% 70%; }
+        .venues-slide4 { background-position: 50% 15%; }
+        .venues-slide5 { background-position: 80% 10%; }
+        .venues-slide6 { background-position: top center; }
       }
     </style>
     <div class="relative z-10 flex items-center justify-center h-full px-4 sm:px-6 intersect intersect-once">
