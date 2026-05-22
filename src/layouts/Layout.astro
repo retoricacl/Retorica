@@ -53,11 +53,22 @@ const { language, textDirection } = I18N;
         pointer-events: none;
       }
 
-      /* Hide default cursor on desktop for custom elite cursor experience */
-      @media (min-width: 768px) {
-        body, a, button, select, input, textarea, [role="button"], h2.cursor-pointer {
-          cursor: none !important;
-        }
+      :root {
+        --retorica-cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23eab308' stroke='%23000' stroke-width='1.25' d='M5 3.5 18.5 12 12 13.5 9 20z'/%3E%3C/svg%3E") 4 4, auto;
+      }
+
+      body {
+        cursor: var(--retorica-cursor);
+      }
+
+      a,
+      button,
+      select,
+      label,
+      summary,
+      [role="button"],
+      h2.cursor-pointer {
+        cursor: pointer;
       }
 
       /* Thin elegant amber scrollbar for modals */
@@ -87,16 +98,12 @@ const { language, textDirection } = I18N;
       <div class="w-px h-full bg-white hidden lg:block"></div>
     </div>
 
-    <!-- Cinematic Magnetic Cursor -->
-    <div id="custom-cursor" class="pointer-events-none fixed top-0 left-0 w-2.5 h-2.5 bg-yellow-400 rounded-full z-[9999] -translate-x-1/2 -translate-y-1/2 transition-transform duration-100 ease-out hidden md:block mix-blend-difference"></div>
-    <div id="custom-cursor-ring" class="pointer-events-none fixed top-0 left-0 w-8 h-8 border border-yellow-400 rounded-full z-[9998] -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ease-out hidden md:block"></div>
-
     <slot />
     <BasicScripts />
 
     <!-- <script src="//code.tidio.co/778le8yt1onvopogbc5xeu0hkcjq2ur6.js" async></script> -->
 
-    <!-- Dynamic Velvet Scroll & Magnetic Cursor Engine -->
+    <!-- Dynamic Velvet Scroll -->
     <script is:inline src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
     <script is:inline>
       document.addEventListener('DOMContentLoaded', () => {
@@ -135,64 +142,6 @@ const { language, textDirection } = I18N;
             }
           });
         });
-
-        // 2. Cinematic Magnetic Cursor Tracking
-        const cursor = document.getElementById('custom-cursor');
-        const ring = document.getElementById('custom-cursor-ring');
-        if (!cursor || !ring) return;
-
-        let mouseX = -100;
-        let mouseY = -100;
-        let ringX = -100;
-        let ringY = -100;
-
-        document.addEventListener('mousemove', (e) => {
-          mouseX = e.clientX;
-          mouseY = e.clientY;
-          cursor.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
-        });
-
-        // Outer ring smooth lagging (physics simulation)
-        const tick = () => {
-          ringX += (mouseX - ringX) * 0.15;
-          ringY += (mouseY - ringY) * 0.15;
-          ring.style.transform = `translate3d(${ringX}px, ${ringY}px, 0) translate(-50%, -50%)`;
-          requestAnimationFrame(tick);
-        };
-        tick();
-
-        // Hover expand and magnetic capture handlers
-        const handleMouseEnter = () => {
-          ring.style.width = '56px';
-          ring.style.height = '56px';
-          ring.style.backgroundColor = 'rgba(234, 179, 8, 0.1)';
-          ring.style.borderColor = '#eab308';
-          cursor.style.transform += ' scale(1.5)';
-        };
-
-        const handleMouseLeave = () => {
-          ring.style.width = '32px';
-          ring.style.height = '32px';
-          ring.style.backgroundColor = 'transparent';
-          ring.style.borderColor = '#eab308';
-          cursor.style.transform = cursor.style.transform.replace(' scale(1.5)', '');
-        };
-
-        const updateInteractiveElements = () => {
-          const interactives = document.querySelectorAll('a, button, select, input, textarea, [role="button"], h2.cursor-pointer');
-          interactives.forEach(el => {
-            el.removeEventListener('mouseenter', handleMouseEnter);
-            el.removeEventListener('mouseleave', handleMouseLeave);
-            el.addEventListener('mouseenter', handleMouseEnter);
-            el.addEventListener('mouseleave', handleMouseLeave);
-          });
-        };
-
-        updateInteractiveElements();
-
-        // MutatorObserver to ensure it keeps working with dynamic modals and overlays
-        const observer = new MutationObserver(updateInteractiveElements);
-        observer.observe(document.body, { childList: true, subtree: true });
       });
     </script>
   </body>
