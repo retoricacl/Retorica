@@ -1,6 +1,12 @@
 [build]
   publish = "dist"
   command = "npm run build"
+[functions]
+  directory = "netlify/functions"
+[[redirects]]
+  from = "/api/sendEmail"
+  to = "/.netlify/functions/sendEmail"
+  status = 200
 [build.processing.html]
   pretty_urls = false
 [[headers]]

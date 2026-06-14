@@ -1,7 +1,5 @@
 import { Resend } from 'resend';
 
-const fallbackResendApiKey = 're_GE2k4CQT_FZZRDC6jyWK1xxdhtqedAsb7';
-
 const escapeHtml = (value = '') =>
   String(value)
     .replace(/&/g, '&amp;')
@@ -15,7 +13,7 @@ export default async function handler(req, res) {
     return res.status(405).json({ message: 'Method Not Allowed' });
   }
 
-  const resendApiKey = process.env.RESEND_API_KEY ?? fallbackResendApiKey;
+  const resendApiKey = process.env.RESEND_API_KEY;
 
   if (!resendApiKey) {
     return res.status(500).json({ message: 'Email service is not configured' });
@@ -30,8 +28,8 @@ export default async function handler(req, res) {
   try {
     const resend = new Resend(resendApiKey);
     const { data, error } = await resend.emails.send({
-      from: process.env.RESEND_FROM_EMAIL ?? 'Retorica Website <cristobal@retorica.cl>',
-      to: process.env.CONTACT_TO_EMAIL ?? 'cristobal@retorica.cl',
+      from: process.env.RESEND_FROM_EMAIL ?? 'Retorica Website <contacto@retorica.cl>',
+      to: process.env.CONTACT_TO_EMAIL ?? 'contacto@retorica.cl',
       replyTo: email,
       subject: `Nuevo contacto: ${name} - ${servicio}`,
       html: `
